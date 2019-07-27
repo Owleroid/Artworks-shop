@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/auth/log-in.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="container">
+            <% if (errorMessage) { %>
+                <div class="user-message--error"><%= errorMessage %></div>
+            <% } %>
+            <form class="log-in-form" action="/log-in" method="POST">
+                <legend>Вход</legend>
+                <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>" type="email"
+                    name="email" id="email" value="<%= oldInput.email %>" placeholder="E-mail:" required>
+                <input class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                    type="password" name="password" id="password" value="<%= oldInput.password %>"
+                    placeholder="Password:" required>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="log-in-form__buttons">
+                    <button type="submit">Вход</button>
+                    <a href="/reset">Сброс пароля</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- include('../includes/end.ejs') %>

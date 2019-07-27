@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    align-self: center;
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px 20px 40px 20px;
+}
+
+.front-side,
+.back-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: transform .6s linear;
+}
+
+.front-side img{
+    width: 100%;
+    height: 100%;
+}
+
+.front-side {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.back-side {
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.back-side--content {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.card:hover > .front-side {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back-side {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.back-side--content h1 {
+    margin: 70px 0 10px 0;
+}
+
+.back-side--content p {
+    margin-bottom: 20px;
+}
+
+.back-side--content a {
+    display: block;
+    width: 100px;
+    margin: auto;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: #ffffff;
+    background-color: #505050;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: 0px;
+    text-decoration: none;
+    border-style: none;
+}
+
+.back-side--content a:hover {
+    background-color: #808080;
+}
+
+.back-side--content a:active {
+    background-color: #202020;
+}
+
+footer {
+    align-self: flex-end;
+}

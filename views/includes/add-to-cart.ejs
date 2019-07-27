@@ -1,0 +1,5 @@
+<form class="form_add-to-cart" action="/cart" method="post" id="to-cart">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="btn button_add-to-cart" type="submit">В корзину</button>
+    <input type="hidden" name="productId" value="<%= product._id %>">
+</form>
