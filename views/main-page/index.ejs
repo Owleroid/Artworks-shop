@@ -3,14 +3,78 @@
 </head>
 
 <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%if (0) {%><%- include('../includes/navigation.ejs') %><%}%>
 
     <main>
-        <div class="container">
-            <h1>Здеся идёт работа над главной страницей</h1>
-            <br>
-            <img src="https://image.freepik.com/free-vector/construction_8183-60.jpg" alt="">
-        </div>
+        <%- include('../includes/slider.ejs') %>
     </main>
-    
+
+    <section class="recomendations">
+        <div class="container">
+            <div class="short-desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id quam fermentum, volutpat velit
+                    nec,
+                    malesuada
+                    urna. Praesent sodales quam eu accumsan accumsan. Proin efficitur, orci eu porttitor porta, sapien
+                    turpis porttitor
+                    neque, ullamcorper laoreet sapien enim ut mauris. Pellentesque pharetra, odio non iaculis gravida.
+                </p>
+            </div>
+
+            <h3>Our recomendations</h3>
+
+            <div class="rec-block">
+                <div><img src="/images/recomendations-artworks.jpg" alt="product name">
+                    <div class="info">
+                        <h4>Product name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id quam fermentum,
+                            volutpat velit nec, malesuada
+                            urna. Praesent sodales quam eu accumsan accumsan. Proin efficitur, orci eu porttitor porta,
+                            sapien turpis porttitor
+                            neque, ullamcorper laoreet sapien enim ut mauris. Pellentesque pharetra, odio non iaculis
+                            gravida.</p>
+                        <button>check out</button>
+                    </div>
+                </div>
+                <div><img src="/images/recomendations-photoes.jpg" alt="product name">
+                    <div class="info">
+                        <h4>Product name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id quam fermentum,
+                            volutpat velit nec, malesuada
+                            urna. Praesent sodales quam eu accumsan accumsan. Proin efficitur, orci eu porttitor porta,
+                            sapien turpis porttitor
+                            neque, ullamcorper laoreet sapien enim ut mauris. Pellentesque pharetra, odio non iaculis
+                            gravida.</p>
+                        <button>check out</button>
+                    </div>
+                </div>
+                <div><img src="/images/recomendations-artworks.jpg" alt="product name">
+                    <div class="info">
+                        <h4>Product name</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id quam fermentum,
+                            volutpat velit nec, malesuada
+                            urna. Praesent sodales quam eu accumsan accumsan. Proin efficitur, orci eu porttitor porta,
+                            sapien turpis porttitor
+                            neque, ullamcorper laoreet sapien enim ut mauris. Pellentesque pharetra, odio non iaculis
+                            gravida.</p>
+                        <button>check out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="info">
+            <ul>
+                <li>works sold</li>
+                <li>reviewes</li>
+                <li>new works this week</li>
+                <li>works sold this week</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="/js/slider.js"></script>
+
     <%- include('../includes/end.ejs') %>

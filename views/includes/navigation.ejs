@@ -2,8 +2,10 @@
     <div class="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
-            <div class="nav-title">
-                HOME-STORY
+            <div class="logo">
+                <!-- <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                    alt="Logo"> -->
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/"><span>Logo</span></a>
             </div>
         </div>
         <div class="nav-btn">
@@ -15,20 +17,21 @@
         </div>
         <div class="nav-links">
             <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-            <a class="<%= path === '/shop' ? 'active' : '' %>" href="/shop">Магазин</a>
-            <a class="<%= path === '/useful-tips' ? 'active' : '' %>" href="/useful-tips">Полезные советы</a>
-            <a class="<%= path === '/about-me' ? 'active' : '' %>" href="/about-me">Обо мне</a>
-            <a class="<%= path === '/studio-rent' ? 'active' : '' %>" href="/studio-rent">Аренда студии</a>
-            <a class="<%= path === '/contacts' ? 'active' : '' %>" href="/contacts">Контакты</a>
+            <a class="<%= path === '/shop' ? 'active' : '' %>" href="/artworks">Artworks</a>
+            <a class="<%= path === '/useful-tips' ? 'active' : '' %>" href="/photoes">Photoes</a>
+            <a class="<%= path === '/about-me' ? 'active' : '' %>" href="/sculptures">Sculptures</a>
+            <a class="<%= path === '/contacts' ? 'active' : '' %>" href="/master-classes">Master classes</a>
+            <a class="<%= path === '/contacts' ? 'active' : '' %>" href="/contacts">Contacts</a>
             <% if (!isAuthenticated) { %>
-                <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">Вход</a>
-                <a class="<%= path === '/sign-up' ? 'active' : '' %>" href="/sign-up">Регистрация</a>
+            <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">
+                <div> </div>
+            </a>
             <% } else { %>
-                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                <form action="/logout" method="post">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit"><i class="fas fa-sign-out-alt"></i></button>
-                </form>
+            <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit"><i class="fas fa-sign-out-alt"></i></button>
+            </form>
             <% } %>
         </div>
     </div>
