@@ -65,7 +65,7 @@ main {
   position: relative;
 }
 .slide-content > .info {
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 .slide-content > .info > h1 {
@@ -79,7 +79,7 @@ main {
 
 .slide-content > .info > button {
   margin-top: 20px;
-  margin-left: 60px;
+  margin-left: 40px;
   height: 40px;
   width: 120px;
   font-size: 20px;
@@ -292,13 +292,13 @@ main {
 }
 
 .recomendations {
-  height: 100vh;
+  height: 110vh;
 }
 
 .recomendations > .container {
   position: relative;
   display: block;
-  padding: 10px 10%;
+  padding: 50px 10%;
   text-align: center;
 }
 
@@ -373,17 +373,55 @@ main {
   display: relative;
 }
 
-.stats > .info {
-  margin-top: 13vh;
+.stats > .container > .info {
+  margin-top: 10vh;
   text-align: center;
+  background-color: #fff;
+  width: 70%;
+  height: 15vh;
+  line-height: 15vh;
 }
 
-.stats > .info > ul {
+.stats > .container > .info > ul {
+  vertical-align: middle;
   display: inline-flex;
+  width: 100%;
+  height: 15vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.stats > .info > ul > li {
+.stats > .container > .info > ul > li {
+  color: #484848;
   list-style-type: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.stats > .container > .info > ul > li > span {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  line-height: normal;
+  top: 25%;
+}
+
+.stats > .container > .info > ul > li > span:nth-child(3) {
+  top: 20%;
+}
+
+.stats > .container > .info > ul > li > .num {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .card {
