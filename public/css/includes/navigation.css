@@ -1,17 +1,21 @@
-header {
-  position: fixed;
-  width: 100%;
-  background-color: #ffffff;
-  z-index: 2000;
-}
-
 .nav {
+  z-index: 2000;
+  background-color: #ffffff;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
+  padding: 0 5%;
   height: 120px;
   margin: auto;
+  top: -120px;
+  transition: top 0.4s ease 0s;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.open {
+  top: 0;
 }
 
 .nav > .nav-header {
@@ -54,7 +58,7 @@ header {
 } */
 
 .nav > .nav-links > a > div {
-  background: url(/images/login-dark.png);
+  background: url(/images/icons/login-dark.png);
   background-size: contain;
   width: 25px;
   height: 25px;

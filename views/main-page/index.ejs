@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <%if (0) {%><%- include('../includes/navigation.ejs') %><%}%>
+    <%- include('../includes/navigation.ejs') %>
 
     <main>
         <%- include('../includes/slider.ejs') %>
@@ -175,7 +175,48 @@
 
     <section class="reviews">
         <div class="container">
+            <h3>Reviews</h3>
+            <div id="wpac-comment"></div>
+            <script type="text/javascript">
+                wpac_init = window.wpac_init || [];
+                wpac_init.push({ widget: 'Comment', id: 8009 });
+                (function () {
+                    if ('WIDGETPACK_LOADED' in window) return;
+                    WIDGETPACK_LOADED = true;
+                    var mc = document.createElement('script');
+                    mc.type = 'text/javascript';
+                    mc.async = true;
+                    mc.src = 'https://embed.widgetpack.com/widget.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+                })();
+            </script>
+        </div>
+    </section>
 
+    <section class="contacts">
+        <div class="container">
+            <h3>Contacts</h3>
+            <div class="workers">
+                <div class="worker">
+                    <img src="/images/worker1.jpg" alt="">
+                    <div class="contact-info">
+                        <h5>Irina Voiteleva</h5>
+                        <h6><img src="/images/icons/phone-call-i.png" alt="">&nbsp;&nbsp;&nbsp;111 111 22 22</h6>
+                        <h6><img src="/images/icons/arroba.png" alt="">&nbsp;&nbsp;&nbsp;email@mail.com</h6>
+                    </div>
+                </div>
+                <div class="worker">
+                    <img src="/images/worker2.jpg" alt="">
+                    <div class="contact-info">
+                        <h5>Yuliia Khmariuk</h5>
+                        <h6><img src="/images/icons/phone-call-i.png" alt="">&nbsp;&nbsp;&nbsp;111 111 22 22</h6>
+                        <h6><img src="/images/icons/arroba.png" alt="">&nbsp;&nbsp;&nbsp;email@mail.com</h6>
+                    </div>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43978.45459325373!2d30.709620905922897!3d46.455564005909046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c63198ff026545%3A0xbe7422d157b28b95!2sCity+food+market!5e0!3m2!1sen!2sua!4v1564510112666!5m2!1sen!2sua"
+                width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </section>
 
