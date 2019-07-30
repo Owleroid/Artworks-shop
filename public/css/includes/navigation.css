@@ -26,6 +26,7 @@ header {
   font-family: "Libre Franklin", sans-serif;
   font-size: 28px;
   color: #484848;
+  text-decoration: none;
 }
 
 .nav > .nav-btn {
@@ -47,6 +48,10 @@ header {
   color: #484848;
   transition: all 0.2s linear;
 }
+
+/* .nav > .nav-links > a:hover {
+  border-bottom: 1px solid #484848;
+} */
 
 .nav > .nav-links > a > div {
   background: url(/images/login-dark.png);
