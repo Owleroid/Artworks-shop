@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const sculptureSchema = new Schema({
+const productSchema = new Schema({
+    class: {
+        type: String,
+        required: true
+    },
     title: {
         type: String,
         required: true
@@ -12,6 +16,7 @@ const sculptureSchema = new Schema({
         required: true
     },
     parameters: {
+        measureSystem: { type: String, required: false },
         width: { type: Number, required: false },
         height: { type: Number, required: false }
     },
@@ -35,5 +40,4 @@ const sculptureSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('sculpture', sculptureSchema);
-
+module.exports = mongoose.model('Product', productSchema);

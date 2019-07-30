@@ -7,13 +7,10 @@ const isAdmin = require('../middleware/is-admin');
 
 const router = express.Router();
 
-// Get routes
+// Add product routes
 
+router.get('/add-product', isAuth, isAdmin, adminController.getAddproduct);
 
-
-// Post routes
-
-
-
+// router.post('add-product', isAuth, isAdmin, adminController.postAddProduct);
 
 module.exports = router;

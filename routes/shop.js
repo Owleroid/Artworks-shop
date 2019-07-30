@@ -5,11 +5,16 @@ const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
 
+// Artworks routes
 
+router.get('/artworks', shopController.getArtworks);
 
-// Post routes
+// Photos routes
 
+router.get('/photos', shopController.getPhotos);
 
-// router.post('/create-order', isAuth, shopController.postOrder);
+// Sculptures routes
+
+router.get('/sculptures', shopController.getSculptures);
 
 module.exports = router;
