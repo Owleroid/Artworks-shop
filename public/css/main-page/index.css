@@ -16,6 +16,8 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  background-color: #e5e5e5;
 }
 
 h3 {
@@ -29,7 +31,6 @@ main {
   align-self: center;
   width: 100%;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .container {
@@ -52,8 +53,8 @@ main {
   vertical-align: top;
   text-align: left;
   width: 100%;
-  padding: 0 10%;
-  margin-top: 80px;
+  padding: 0 15%;
+  margin-top: 70px;
   display: flex;
 }
 
@@ -79,7 +80,6 @@ main {
 
 .slide-content > .info > button {
   margin-top: 20px;
-  margin-left: 40px;
   height: 40px;
   width: 120px;
   font-size: 20px;
@@ -92,7 +92,7 @@ main {
 }
 
 .slide .social {
-  margin-top: 15vh;
+  margin-top: 10%;
   margin-right: 10vh;
   float: right;
   bottom: -25px;
@@ -138,7 +138,7 @@ main {
 }
 
 .artworks-slide > .nav > .nav-links > a > div {
-  background: url(/images/login-bright.png);
+  background: url(/images/icons/login-bright.png);
   background-size: contain;
   width: 25px;
   height: 25px;
@@ -175,30 +175,37 @@ main {
   transform: rotate(-180deg);
 }
 
-.photoes-slide {
+.photos-slide {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  background-image: url(/images/photoes.jpg);
+  background-image: url(/images/photos.jpg);
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 28% 100%;
 }
 
-.photoes-slide > .nav > .nav-header > .logo > a > span {
+.photos-slide > .nav > .nav-header > .logo > a > span {
   color: #fff;
 }
 
-.photoes-slide > .slide-content > .info > button {
+.photos-slide > .slide-content > .info > button {
   color: #fff;
   background: #484848;
 }
 
-.photoes-slide > .slide-content .info {
+.photos-slide > .slide-content .info {
   color: #484848;
 }
 
-.photoes-slide > .previous {
+.photos-slide > .nav > .nav-links > a > div {
+  background: url(/images/icons/login-dark.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
+.photos-slide > .previous {
   position: absolute;
   margin-top: 30vh;
   margin-left: 1vh;
@@ -208,7 +215,7 @@ main {
   cursor: pointer;
 }
 
-.photoes-slide > .next {
+.photos-slide > .next {
   position: absolute;
   right: 1vh;
   margin-top: 30vh;
@@ -218,12 +225,12 @@ main {
   cursor: pointer;
 }
 
-.photoes-slide > .next > img {
+.photos-slide > .next > img {
   width: 40px;
   height: 40px;
 }
 
-.photoes-slide > .previous > img {
+.photos-slide > .previous > img {
   width: 40px;
   height: 40px;
   transform: rotate(-180deg);
@@ -254,7 +261,7 @@ main {
 }
 
 .sculptures-slide > .nav > .nav-links > a > div {
-  background: url(/images/login-bright.png);
+  background: url(/images/icons/login-bright.png);
   background-size: contain;
   width: 25px;
   height: 25px;
@@ -292,11 +299,32 @@ main {
 }
 
 .recomendations {
-  height: 110vh;
+  height: 120vh;
+  position: relative;
+  color: #484848;
+}
+
+.recomendations > .white-bg-rec {
+  background: #fff;
+  width: 100%;
+  height: 55%;
+  position: absolute;
+  z-index: -1;
+}
+
+.recomendations > .white-bg-rec::after {
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: 0px;
+  border-top: 100px solid #fff;
+  border-right: 99vw solid transparent;
+  top: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .recomendations > .container {
-  position: relative;
   display: block;
   padding: 50px 10%;
   text-align: center;
@@ -334,7 +362,7 @@ main {
 }
 
 .recomendations > .container > .rec-block > div > img {
-  height: 400px;
+  height: 375px;
   width: 100%;
 }
 
@@ -422,6 +450,103 @@ main {
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
+}
+
+.how-we-do-art {
+  width: 100%;
+  height: 110vh;
+  color: #484848;
+}
+
+.how-we-do-art > .white-bg-hwda {
+  background: #fff;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  margin-top: 20%;
+  z-index: -1;
+}
+
+.how-we-do-art > .white-bg-hwda::before {
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: 0px;
+  border-top: 100px solid #fff;
+  border-right: 99vw solid transparent;
+  position: absolute;
+  z-index: 1;
+}
+
+.how-we-do-art > .container {
+  display: block;
+  padding: 0px 10%;
+  text-align: center;
+}
+
+.how-we-do-art > .container > .hwda-block {
+  margin-top: 10%;
+  border: 6px solid #484848;
+  width: 100%;
+  height: 75vh;
+  overflow: visible;
+}
+
+.how-we-do-art > .container > .hwda-block > .hwda-cards {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  overflow: visible;
+  position: relative;
+  justify-content: center;
+}
+
+.how-we-do-art > .container > .hwda-block > .hwda-cards > .hwda-card {
+  width: 22vw;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: absolute;
+}
+
+.how-we-do-art
+  > .container
+  > .hwda-block
+  > .hwda-cards
+  > .hwda-card:nth-child(1) {
+  left: 5%;
+  top: -60px;
+}
+
+.how-we-do-art
+  > .container
+  > .hwda-block
+  > .hwda-cards
+  > .hwda-card:nth-child(2) {
+  top: 50px;
+}
+
+.how-we-do-art
+  > .container
+  > .hwda-block
+  > .hwda-cards
+  > .hwda-card:nth-child(3) {
+  top: -100px;
+  right: 5%;
+}
+
+.how-we-do-art > .container > .hwda-block > .hwda-cards > .hwda-card > img {
+  width: 100%;
+  height: 30vh;
+}
+
+.how-we-do-art > .container > .hwda-block > .hwda-cards > .hwda-card > h4 {
+  padding: 10px;
+}
+
+.how-we-do-art > .container > .hwda-block > .hwda-cards > .hwda-card > p {
+  padding: 10px 10% 10% 10%;
+  text-align: left;
 }
 
 .card {
