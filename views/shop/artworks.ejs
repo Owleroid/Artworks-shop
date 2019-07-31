@@ -7,6 +7,7 @@
     <%- include('../includes/navigation.ejs') %>
 
     <main>
+<<<<<<< HEAD
         <% if (products.length > 0) { %>
             <% for (let product of products) { %>
                 <div class="product">
@@ -16,6 +17,12 @@
         <% } else { %>
             <h1>Nihuya netu</h1>
         <% } %>
+=======
+        <h1>Artworks page!</h1>
+        <%for(let product of products){ %>
+        <div><%= product.name %></div>
+        <%}%>
+>>>>>>> 736a44dfb81992473a3525a04e1b9785f59678db
     </main>
 
     <%- include('../includes/end.ejs') %>
