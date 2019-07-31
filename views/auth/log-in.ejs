@@ -8,7 +8,7 @@
     <main>
         <div class="container">
             <% if (errorMessage) { %>
-                <div class="user-message--error"><%= errorMessage %></div>
+            <div class="user-message--error"><%= errorMessage %></div>
             <% } %>
             <form class="log-in-form" action="/log-in" method="POST">
                 <legend>Вход</legend>
@@ -19,9 +19,10 @@
                     placeholder="Password:" required>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="log-in-form__buttons">
-                    <button type="submit">Вход</button>
-                    <a href="/reset">Сброс пароля</a>
+                    <button type="submit">Log in</button>
+                    <a href="/sign-up">Sign up</a>
                 </div>
+                <a class="recover-link" href="/reset">Recover password</a>
             </form>
         </div>
     </main>

@@ -5,9 +5,17 @@ $(document).ready(function() {
 
   var menu = $(".nav")[0];
   menu = $(menu);
+  let showMenuPosition = 200;
+
+  let isMainPage = $(".slide").length;
+
+  if (!isMainPage) {
+    menu.addClass("open");
+    showMenuPosition = -10;
+  }
 
   $(window).bind("scroll", function(e) {
-    if ($(window).scrollTop() > 200) {
+    if ($(window).scrollTop() > showMenuPosition) {
       if (!menu.hasClass("open")) {
         console.log(menu.css("top"));
         menu.addClass("open");
@@ -18,13 +26,6 @@ $(document).ready(function() {
       }
     }
   });
-
-  let isMainPage = $(".slide").length;
-  console.log(isMainPage);
-
-  if (!isMainPage) {
-    menu.addClass("open");
-  }
 
   //------------------------------------//
   //Scroll To//

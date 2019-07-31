@@ -8,6 +8,9 @@
 
     <main>
         <h1>Artworks page!</h1>
+        <%for(let product of products){ %>
+        <div><%= product.name %></div>
+        <%}%>
     </main>
 
     <%- include('../includes/end.ejs') %>
