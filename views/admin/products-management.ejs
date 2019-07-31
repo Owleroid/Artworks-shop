@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs') %>
 <meta name="csrf-token" content="<%= csrfToken %>">
-<link rel="stylesheet" href="/css/shop/photos.css">
+<link rel="stylesheet" href="/css/admin/addProduct.css">
 </head>
 
 <body>
@@ -14,7 +14,8 @@
                 </div>
             <% } %>
         <% } else { %>
-            <h1>Nihuya netu</h1>
+            <h1>You haven't added any products yet!</h1>
+            <a href="/admin/add-product">Add product</a>
         <% } %>
     </main>
 

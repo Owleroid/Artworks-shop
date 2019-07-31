@@ -4,7 +4,7 @@ const Order = require('../models/order');
 // <---- Artworks ----> //
 
 exports.getArtworks = (req, res, next) => {
-  Product.find()
+  Product.find({ 'category': 'artworks' })
     .then((artworks) => {
       return res.render('shop/artworks', {
         path: '/artworks',
@@ -22,7 +22,7 @@ exports.getArtworks = (req, res, next) => {
 // <---- Photos ----> //
 
 exports.getPhotos = (req, res, next) => {
-  Product.find()
+  Product.find({ 'category': 'photos' })
     .then((photos) => {
       return res.render('shop/photos', {
         path: '/photos',
@@ -40,7 +40,7 @@ exports.getPhotos = (req, res, next) => {
 // <---- Sculptures ----> //
 
 exports.getSculptures = (req, res, next) => {
-  Product.find()
+  Product.find({ 'category': 'sculptures' })
     .then((sculptures) => {
       res.render('shop/sculptures', {
         path: '/sculptures',

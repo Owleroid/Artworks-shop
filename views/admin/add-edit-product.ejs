@@ -7,7 +7,36 @@
     <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <h1>Product adding page!</h1>
+        <% if (path === '/admin/add-product') { %>
+            <form action="/admin/add-product" method="POST" enctype="multipart/form-data">
+                <legend>New product</legend>
+                <div>
+                    <h2>Выберите категорию:</h2>
+                    <input type="radio" name="category" id="artworks" value="artworks" placeholder="Artworks">
+                    <input type="radio" name="category" id="photos" value="photos" placeholder="Photos">
+                    <input type="radio" name="category" id="sculptures" value="sculptures" placeholder="Sculptures">
+                </div>
+                <input type="text" name="title" id="title" placeholder="Title">
+                <input type="number" name="price" id="price" min="1" placeholder="Price">
+                <div>
+                    <select name="measureSystem" id="measureSystem">
+                        <option value="sm.">Сentimeters</option>
+                        <option value="m.">Meters</option>
+                    </select>
+                    <input type="number" name="width" id="width" placeholder="Width">
+                    <input type="number" name="height" id="height" placeholder="Height">
+                </div>
+                <div>
+                    <input type="text" name="firstname" id="firstName" placeholder="First Name">
+                    <input type="text" name="secondName" id="secondName" placeholder="Second Name">
+                    <input type="text" name="link" id="link" placeholder="Link">
+                </div>
+                <input type="file" name="image" id="image">
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Сохранить</button>
+            </form>
+        <% } %>
     </main>
 
     <%- include('../includes/end.ejs') %>
