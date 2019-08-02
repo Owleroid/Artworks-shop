@@ -26,7 +26,7 @@ const productSchema = new Schema({
     },
     author: {
         fullName: {
-            firstname: { type: String, required: false },
+            firstName: { type: String, required: false },
             lastName: { type: String, required: false }
         },
         link: {
