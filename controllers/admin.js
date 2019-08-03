@@ -33,13 +33,13 @@ exports.getProductsManagement = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
     const editMode = req.query.edit;
-    const productID = req.params.productId;
+    const productId = req.params.productId;
 
     if (!editMode) {
         return res.redirect('/admin/products-management');
     }
 
-    Product.findById(productID)
+    Product.findById(productId)
         .then(product => {
 
             if (!product) {
@@ -133,7 +133,7 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.postEditProduct = (req, res, next) => {
-    const productID = req.body.productID;
+    const productId = req.body.productId;
     const category = req.body.category;
     const title = req.body.title;
     const price = req.body.price;
@@ -146,7 +146,7 @@ exports.postEditProduct = (req, res, next) => {
     const description = req.body.description;
     const image = req.file;
 
-    Product.findById(productID)
+    Product.findById(productId)
         .then(product => {
 
             if (image) {
@@ -174,15 +174,15 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.postDeleteProduct = (req, res, next) => {
-    const prodID = req.body.productID;
+    const prodId = req.body.productId;
 
-    Product.findById(prodID)
+    Product.findById(prodId)
         .then(product => {
             if (!product) {
-                return next(new Error('Can\'t find product with such ID.'));
+                return next(new Error('Can\'t find product with such Id.'));
             }
             fileHelper.deleteFile(product.imageURL);
-            return Product.deleteOne({ _id: prodID });
+            return Product.deleteOne({ _id: prodId });
         })
         .then(() => {
             res.redirect('/admin/products-management');

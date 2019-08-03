@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%- include('../includes/navigation-admin.ejs') %>
 
     <main>
         <% if (products.length > 0) { %>
@@ -13,7 +13,7 @@
                     <p><%= product %></p>
                     <a class="btn" href="/admin/edit-product/<%= product._id %>?edit=true">Редактировать</a>
                     <form action="/admin/delete-product" method="POST">
-                        <input type="hidden" value="<%= product._id %>" name="productID">
+                        <input type="hidden" value="<%= product._id %>" name="productId">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button class="btn" type="submit">Удалить</button>
                     </form>

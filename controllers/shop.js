@@ -55,7 +55,73 @@ exports.getSculptures = (req, res, next) => {
     });
 };
 
+// <---- Product details ----> //>
 
+exports.getProduct = (req, res, next) => {
+  const prodId = req.params.productId;
 
+  Product.findById(prodId)
+    .then(product => {
+      res.render('shop/product-details', {
+        path: '/products',
+        pageTitle: product.title,
+        product: product
+      });
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
 
+// <---- Cart ----> //
 
+exports.getCart = async (req, res, next) => {
+  const user = await req.user.populate('cart.items.productId').execPopulate();
+  const userOrders = await Order.find({ 'user.userId': req.user._id }).populate('products.productId').exec();
+
+  try {
+    const products = user.cart.items;
+    let totalCartPrice = 0;
+
+    if (products.length > 0) {
+      products.forEach(product => {
+        totalCartPrice += product.total;
+      });
+    }
+
+    res.render('shop/cart', {
+      path: '/cart',
+      pageTitle: 'Cart',
+      products: products,
+      cartTotal: totalCartPrice,
+      orders: userOrders
+    });
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStausCode = 500;
+    return next(error);
+  };
+};
+
+exports.postAddToCart = (req, res, next) => {
+  console.log("AddToCart - triggered")
+  const prodId = req.body.productId;
+
+  Product.findById(prodId)
+    .then(product => {
+      if(product) {
+        console.log("Found")
+      }
+      return req.user.addToCart(product);
+    })
+    .then(() => {
+      res.redirect('/cart');
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStausCode = 500;
+      return next(error);
+    });
+};
