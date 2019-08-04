@@ -106,19 +106,27 @@ exports.getCart = async (req, res, next) => {
 };
 
 exports.postAddToCart = (req, res, next) => {
-  console.log("AddToCart - triggered")
   const prodId = req.body.productId;
 
   Product.findById(prodId)
     .then(product => {
-      if(product) {
-        console.log("Found")
-      }
       return req.user.addToCart(product);
     })
     .then(() => {
       res.redirect('/cart');
     })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStausCode = 500;
+      return next(error);
+    });
+};
+
+exports.postCartDeleteProduct = (req, res, next) => {
+  const productId = req.body.productId;
+
+  req.user
+    .removeProductFromCart(productId)
     .catch(err => {
       const error = new Error(err);
       error.httpStausCode = 500;

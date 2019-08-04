@@ -27,4 +27,6 @@ router.get('/cart', isAuth, shopController.getCart);
 
 router.post('/cart-add-product', isAuth, shopController.postAddToCart);
 
+router.post('/cart-delete-product', isAuth, shopController.postCartDeleteProduct);
+
 module.exports = router;

@@ -15,6 +15,11 @@
             <% products.forEach(product => { %>
                 <div>
                     <p><%= product %></p>
+                    <form action="/cart-delete-product" method="POST">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit">Delete</button>
+                    </form>
                 </div>
             <% }) %>
         <% } else { %>
