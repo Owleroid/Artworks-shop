@@ -7,18 +7,22 @@
     <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <% if (path === '/admin/add-product') { %>
+        <div class="container">
+            <% if (path === '/admin/add-product') { %>
             <form action="/admin/add-product" method="POST" enctype="multipart/form-data">
-                <legend>New product</legend>
-                <div>
-                    <h2>Выберите категорию:</h2>
+                <div class="category">
+                    <label>Выберите категорию:</label>
                     <input type="radio" name="category" id="artworks" value="artworks" placeholder="Artworks">
+                    <label>Artworks</label>
                     <input type="radio" name="category" id="photos" value="photos" placeholder="Photos">
+                    <label>Photos</label>
                     <input type="radio" name="category" id="sculptures" value="sculptures" placeholder="Sculptures">
+                    <label>Sculptures</label>
                 </div>
                 <input type="text" name="title" id="title" placeholder="Title">
                 <input type="number" name="price" id="price" min="1" placeholder="Price">
-                <div>
+                <div class="measureSystem">
+                    <label>Укажите размер:</label>
                     <select name="measureSystem" id="measureSystem">
                         <option value="sm.">Сentimeters</option>
                         <option value="m.">Meters</option>
@@ -26,17 +30,22 @@
                     <input type="number" name="width" id="width" placeholder="Width">
                     <input type="number" name="height" id="height" placeholder="Height">
                 </div>
-                <div>
+                <div class="author">
+                    <label>Укажите автора:</label>
                     <input type="text" name="firstname" id="firstName" placeholder="First Name">
-                    <input type="text" name="secondName" id="secondName" placeholder="Second Name">
+                    <input type="text" name="secondname" id="secondName" placeholder="Second Name">
                     <input type="text" name="link" id="link" placeholder="Link">
                 </div>
-                <input type="file" name="image" id="image">
+                <div class="image">
+                    <label>Выберите изображение:</label>
+                    <input type="file" name="image" id="image">
+                </div>
                 <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit">Сохранить</button>
             </form>
-        <% } %>
+            <% } %>
+        </div>
     </main>
 
     <%- include('../includes/end.ejs') %>

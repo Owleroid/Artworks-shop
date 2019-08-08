@@ -14,10 +14,12 @@
             </label>
         </div>
         <div class="nav-links">
-            <a class="<%= path === '/admin/products-management' ? 'active' : '' %>" href="/admin/products-management">Товары</a>
-            <a class="<%= path === '/admin/orders-management' ? 'active' : '' %>" href="/admin/orders-management">Заказы</a>
-            <a class="<%= path === '/admin/warehouse-management' ? 'active' : '' %>" href="/admin/warehouse-management">Склад</a>
-            <a class="<%= path === '/admin/articles-management' ? 'active' : '' %>" href="/admin/articles-management">Статьи</a>
+            <a class="<%= path === '/admin/products-management' ? 'active' : '' %>"
+                href="/admin/products-management">Товары</a>
+            <a class="<%= path === '/admin/orders-management' ? 'active' : '' %>"
+                href="/admin/orders-management">Заказы</a>
+            <a class="<%= path === '/admin/articles-management' ? 'active' : '' %>"
+                href="/admin/articles-management">Статьи</a>
             <a class="<%= path === '/' ? 'active' : '' %>" href="/">Перейти на сайт</a>
             <form action="/logout" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">

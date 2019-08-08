@@ -25,11 +25,18 @@
                 <div> </div>
             </a>
             <% } else { %>
-            <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            <a class="cart" href="/cart">
+                <div></div>
+            </a>
             <form action="/logout" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <button type="submit"><i class="fas fa-sign-out-alt"></i></button>
+                <button type="submit">
+                    <div></div>
+                </button>
             </form>
+            <% if (isAdmin) { %>
+            <a href="/admin/products-management" class="pm-link"><i class="fas fa-sliders-h"></i></a>
+            <% } %>
             <% } %>
         </div>
     </div>

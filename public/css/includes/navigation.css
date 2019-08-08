@@ -64,6 +64,25 @@
   height: 25px;
 }
 
+.nav > .nav-links > .cart > div {
+  background: url(/images/icons/shopping-cart.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
+.nav > .nav-links > .pm-link {
+  font-size: 24px;
+}
+
+.nav > .nav-links > form > button > div {
+  background: url(/images/icons/login-dark.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-180deg);
+}
+
 .nav > .nav-links > a:nth-child(6) {
   margin-right: 60px;
 }

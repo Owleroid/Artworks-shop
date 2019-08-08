@@ -25,10 +25,14 @@
                     <div></div>
                 </a>
                 <% } else { %>
-                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="cart" href="/cart">
+                    <div></div>
+                </a>
                 <form action="/logout" method="post">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit"><i class="fas fa-sign-out-alt"></i></button>
+                    <button type="submit">
+                        <div></div>
+                    </button>
                 </form>
                 <% } %>
             </div>

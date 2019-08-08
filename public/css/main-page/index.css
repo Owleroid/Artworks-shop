@@ -150,6 +150,21 @@ main {
   height: 25px;
 }
 
+.artworks-slide > .nav > .nav-links > form > button > div {
+  background: url(/images/icons/login-bright.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-180deg);
+}
+
+.artworks-slide > .nav > .nav-links > .cart > div {
+  background: url(/images/icons/shopping-cart-white.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
 .artworks-slide > .previous {
   position: absolute;
   margin-top: 30vh;
@@ -213,6 +228,21 @@ main {
 
 .photos-slide > .nav > .nav-links > a > div {
   background: url(/images/icons/login-dark.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
+.photos-slide > .nav > .nav-links > form > button > div {
+  background: url(/images/icons/login-dark.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-180deg);
+}
+
+.photos-slide > .nav > .nav-links > .cart > div {
+  background: url(/images/icons/shopping-cart.png);
   background-size: contain;
   width: 25px;
   height: 25px;
@@ -282,6 +312,21 @@ main {
 
 .sculptures-slide > .nav > .nav-links > a > div {
   background: url(/images/icons/login-bright.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+
+.sculptures-slide > .nav > .nav-links > form > button > div {
+  background: url(/images/icons/login-bright.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-180deg);
+}
+
+.sculptures-slide > .nav > .nav-links > .cart > div {
+  background: url(/images/icons/shopping-cart-white.png);
   background-size: contain;
   width: 25px;
   height: 25px;

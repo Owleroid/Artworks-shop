@@ -8,6 +8,10 @@ footer {
   justify-content: center;
 }
 
+.pm-link {
+  color: #fff;
+}
+
 footer > .logo {
   left: 5%;
   margin-top: 80px;

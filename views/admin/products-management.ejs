@@ -1,22 +1,51 @@
 <%- include('../includes/head.ejs') %>
 <meta name="csrf-token" content="<%= csrfToken %>">
-<link rel="stylesheet" href="/css/admin/addProduct.css">
+<link rel="stylesheet" href="/css/admin/product-management.css">
 </head>
 
 <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%- include('../includes/navigation-admin.ejs') %>
 
     <main>
-        <% if (products.length > 0) { %>
-            <% for (let product of products) { %>
-                <div class="product">
-                    <p><%= product %></p>
-                </div>
-            <% } %>
-        <% } else { %>
+        <div class="container">
+            <% if (products.length > 0) { %>
+            <div class="pm-buttons">
+                <a href="/admin/add-product">Add product</a>
+                <a href="/admin/delete-product">Delete product (in dev)</a>
+                <a>Amount of products: <%= products.length %></a>
+            </div>
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                    <th>Size ( height x width )</th>
+                    <th>Description</th>
+                </tr>
+                <% for (let product of products) { %>
+                <tr class="product">
+                    <td><img src="\<%= product.imageURL %>" alt=""></td>
+                    <td><%= product.title %></td>
+                    <td><%= product.category %></td>
+                    <td><%= product.price %></td>
+                    <% if(product.author){ %>
+                    <td><a href="<%= product.author.link %>"><%= product.author.fullName.firstname %>
+                            <%= product.author.fullName.lastname %>
+                        </a></td>
+                    <% } %>
+                    <td><%= product.parameters.measureSystem %> <%= product.parameters.height %>
+                        <%= product.parameters.width %></td>
+                    <td><%= product.description %></td>
+                </tr>
+                <% } %>
+            </table>
+            <% } else { %>
             <h1>You haven't added any products yet!</h1>
             <a href="/admin/add-product">Add product</a>
-        <% } %>
+            <% } %>
+        </div>
     </main>
 
     <%- include('../includes/end.ejs') %>
