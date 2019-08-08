@@ -11,7 +11,6 @@
             <% if (products.length > 0) { %>
             <div class="pm-buttons">
                 <a href="/admin/add-product">Add product</a>
-                <a href="/admin/delete-product">Delete product (in dev)</a>
                 <a>Amount of products: <%= products.length %></a>
             </div>
             <table>
@@ -38,6 +37,13 @@
                     <td><%= product.parameters.measureSystem %> <%= product.parameters.height %>
                         <%= product.parameters.width %></td>
                     <td><%= product.description %></td>
+                    <td><a class="btn" href="/admin/edit-product/<%= product._id %>?edit=true">Редактировать</a>
+                        <form action="/admin/delete-product" method="POST">
+                            <input type="hidden" value="<%= product._id %>" name="productId">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button class="btn" type="submit">Удалить</button>
+                        </form>
+                    </td>
                 </tr>
                 <% } %>
             </table>

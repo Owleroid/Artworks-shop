@@ -11,7 +11,9 @@
             <% if (products.length > 0) { %>
             <% for (let product of products) { %>
             <div class="product">
-                <img src="<%= product.imageURL %>" alt=""></p>
+                <a href="/products/<%= product._id %>">
+                    <img src="<%= product.imageURL %>" alt="">
+                </a>
             </div>
             <% } %>
             <% } else { %>

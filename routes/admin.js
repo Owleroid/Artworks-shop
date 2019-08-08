@@ -11,8 +11,14 @@ const router = express.Router();
 
 router.get('/add-product', isAuth, isAdmin, adminController.getAddproduct);
 
+router.get('/edit-product/:productId', isAuth, isAdmin, adminController.getEditProduct);
+
 router.get('/products-management', isAuth, isAdmin, adminController.getProductsManagement);
 
 router.post('/add-product', isAuth, isAdmin, adminController.postAddProduct);
+
+router.post('/edit-product', isAuth, isAdmin, adminController.postEditProduct);
+
+router.post('/delete-product', isAuth, isAdmin, adminController.postDeleteProduct);
 
 module.exports = router;

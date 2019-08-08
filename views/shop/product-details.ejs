@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+<meta name="csrf-token" content="<%= csrfToken %>">
+<link rel="stylesheet" href="/css/shop/sculptures.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <p><%= product %></p>
+        <% if (isAuthenticated) { %>
+            <form action="/cart-add-product" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="productId" value="<%= product._id %>">
+                <button type="submit">Add to cart</button>
+            </form>
+        <% } else { %>
+            <h1>To be able to order an item, you should be registered</h1>
+        <% } %>
+    </main>
+
+    <%- include('../includes/end.ejs') %>
