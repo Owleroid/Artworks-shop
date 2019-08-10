@@ -21,4 +21,8 @@ router.post('/edit-product', isAuth, isAdmin, adminController.postEditProduct);
 
 router.post('/delete-product', isAuth, isAdmin, adminController.postDeleteProduct);
 
+// All related to orders
+
+router.get('/orders-management', isAuth, isAdmin, adminController.getOrdersManagement);
+
 module.exports = router;

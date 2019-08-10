@@ -133,3 +133,42 @@ exports.postCartDeleteProduct = (req, res, next) => {
       return next(error);
     });
 };
+
+exports.postCreateOrder = async (req, res, next) => {
+  const user = await req.user.populate('cart.items.productId');
+  const orderStatus = 'In process';
+  const date = Date.now();
+
+  try {
+
+    const products = user.cart.items.map(i => {
+      return {
+        productId: i.productId
+      };
+    });
+
+    const order = new Order({
+      user: {
+        userId: req.user,
+        email: req.user.email,
+        phone: req.user.phone,
+        fullName: {
+          firstName: req.user.fullName.firstName,
+          lastName: req.user.fullName.lastName
+        }
+      },
+      products: products,
+      orderStatus: orderStatus,
+      date: date
+    });
+
+    order.save();
+    req.user.clearCart();
+    res.redirect('/cart');
+
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStausCode = 500;
+    return next(error);
+  };
+};

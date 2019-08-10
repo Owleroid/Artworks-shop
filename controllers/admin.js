@@ -193,3 +193,23 @@ exports.postDeleteProduct = (req, res, next) => {
             return next(error);
         });
 };
+
+// All related to Orders
+
+exports.getOrdersManagement = (req, res, next) => {
+    Order.find()
+        .populate('products.productId')
+        .exec()
+        .then(orders => {
+            res.render('admin/orders-management', {
+                pageTitle: 'Orders management',
+                path: '/admin/orders-management',
+                orders: orders
+            });
+        })
+        .catch(err => {
+            const error = new Error(err);
+            error.httpStausCode = 500;
+            return next(error);
+        });
+};

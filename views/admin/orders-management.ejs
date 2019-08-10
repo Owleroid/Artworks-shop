@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+<meta name="csrf-token" content="<%= csrfToken %>">
+<link rel="stylesheet" href="/css/admin/product-management.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+
+    <main>
+        <% if (orders.length > 0) { %>
+            <% orders.forEach(order => { %>
+                <div>
+                    <p><%= order %></p>
+                    <form action="/admin/delete-order" method="post">
+                        <input type="hidden" name="orderId" value="<%= order._id %>">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="btn" type="submit">Delete</i></button>
+                    </form>
+                </div>
+            <% }) %>
+        <% } else { %>
+
+        <% } %>
+    </main>
+
+    <%- include('../includes/end.ejs') %>

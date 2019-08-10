@@ -21,9 +21,18 @@
                         <button type="submit">Delete</button>
                     </form>
                 </div>
+                <form action="/cart-create-order" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit">Checkout</button>
+                </form>
             <% }) %>
         <% } else { %>
             <h1>Empty</h1>
+        <% } %>
+        <% if (orders.length > 0) { %>
+            <% orders.forEach(order => { %>
+                <p><%= order %></p>
+            <% }) %>
         <% } %>
     </main>
 

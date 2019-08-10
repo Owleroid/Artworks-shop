@@ -55,7 +55,6 @@ userSchema.methods.addToCart = function (product) {
   };
 
   this.cart = updatedCart;
-  console.log(this.cart);
   return this.save();
 };
 
@@ -67,6 +66,11 @@ userSchema.methods.removeProductFromCart = function (productId) {
   });
 
   this.cart.items = updatedCartItems;
+  return this.save();
+};
+
+userSchema.methods.clearCart = function () {
+  this.cart = { items: [] };
   return this.save();
 };
 
