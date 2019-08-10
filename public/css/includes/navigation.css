@@ -64,7 +64,7 @@
   height: 25px;
 }
 
-.nav > .nav-links > .cart > div {
+.nav > .nav-links > .cart > .cart-icon {
   background: url(/images/icons/shopping-cart.png);
   background-size: contain;
   width: 25px;
@@ -151,11 +151,20 @@
     transition: all 0.2s linear;
   }
 
+  .show {
+    height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+  }
+
   .nav > .nav-links > a {
     display: block;
     padding: 5px 0;
     text-align: center;
     color: #484848 !important;
+  }
+
+  .nav > .nav-links > .cart {
+    margin: 0 auto;
   }
 
   .nav > .nav-links > a:nth-child(6) {
@@ -168,14 +177,5 @@
   .nav > .nav-links > form {
     margin: 0 auto;
     text-align: center;
-  }
-
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
-  }
-
-  .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 100px);
-    overflow-y: auto;
   }
 }

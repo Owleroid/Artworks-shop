@@ -3,7 +3,7 @@
         <div class="nav">
             <div class="nav-header">
                 <div class="logo">
-                    <a class="<%= path === '/' ? 'active' : '' %>" href="/"><span>Logo</span></a>
+                    <a class="<%= path === '/' ? 'active' : '' %>" href="/"><span>Art108</span></a>
                 </div>
             </div>
             <div class="nav-btn">
@@ -37,12 +37,15 @@
                 <% } %>
             </div>
         </div>
-        <button class="previous" onclick="plusDivs(-1)"><img src="/images/icons/bright-arrow.png"
-                alt="Previous"></button>
-        <button class="next" onclick="plusDivs(1)"><img src="/images/icons/dark-arrow.png" alt="Next"></button>
+        <button class="previous" onclick="plusDivs(-1)">
+            <div></div>
+        </button>
+        <button class="next" onclick="plusDivs(1)">
+            <div></div>
+        </button>
 
         <div class="slide-content">
-            <img src="/images/photo-example.jpg">
+            <img src="/images/img/photo-example.jpg">
             <div class="info">
                 <h1>Artworks</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt sem sit amet mi dapibus,
