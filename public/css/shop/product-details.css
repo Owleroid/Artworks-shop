@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  color: #484848;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  align-self: center;
+  width: 100%;
+  height: auto;
+  margin-top: 12%;
+  margin-bottom: 12%;
+}
+
+main > .container {
+  display: flex;
+  height: auto;
+  width: 100%;
+  padding: 0 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main > .conatiner {
+  padding: 0 25%;
+}
+
+/*main > .conatiner > .product {
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
+}
+*/
+
+main > .conatiner > .product > .product-head {
+  width: 100%;
+  height: 100%;
+}
+
+main > .conatiner > .product > .product-head h3 {
+  font-family: Oswald;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+main > .conatiner > .product > .product-head > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+main > .conatiner > .product > .product-head > img:hover {
+  opacity: 0.8;
+}
+
+main > .conatiner > .product > .product-body {
+  width: 100%;
+  position: relative;
+}
+
+main > .conatiner > .product > .product-body > .product-info {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 25px 0;
+}
+
+main > .conatiner > .product > .product-body > form {
+  width: 100%;
+  height: 90px;
+  position: relative;
+}
+
+main > .conatiner > .product > .product-body > form > button {
+  margin-top: 20px;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  background: #484848;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+}
+
+main > .conatiner > .product > .product-body > .product-info .price {
+  position: absolute;
+  right: 5%;
+}
+
+main > .conatiner > .product > .product-body > .product-info .size {
+  position: absolute;
+  left: 5%;
+}
+
+main > .conatiner > .product > .product-body > .product-desc {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 15%;
+  text-align: left;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 4000;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close-product {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-product:hover,
+.close-product:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+
+  main > .conatiner {
+    padding: 0 10%;
+  }
+
+  main > .conatiner > .product > .product-body > form {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  main > .conatiner > .product > .product-body > form > button {
+    margin: auto;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px) {
+  main > .conatiner {
+    padding: 0 5%;
+  }
+}

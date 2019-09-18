@@ -21,7 +21,7 @@ body {
 }
 
 h3 {
-  font-family: Arial;
+  font-family: Oswald;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -70,7 +70,7 @@ main {
 }
 
 .slide-content > .info > h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Oswald Medium", "Arial Narrow", Arial, sans-serif;
   margin-top: 10px;
 }
 
@@ -360,7 +360,7 @@ main {
 .sculptures-slide > .previous > div {
   width: 40px;
   height: 40px;
-  background: url("/images/icons/dark-arrow.png");
+  background: url("/images/icons/bright-arrow.png");
   background-size: contain;
   transform: rotate(-180deg);
 }
@@ -502,6 +502,7 @@ main {
 
 .stats > .container > .info {
   margin: auto;
+  margin-top: 10vh;
   text-align: center;
   background-color: #fff;
   width: 70%;
@@ -643,6 +644,8 @@ main {
 }
 
 .how-we-do-art > .container > .hwda-block > .hwda-cards > .hwda-card > h4 {
+  font-size: 20px;
+  font-family: "Oswald";
   padding: 10px;
 }
 
@@ -666,6 +669,7 @@ main {
 .reviews > .container > h3 {
   padding-top: 10%;
   width: 100%;
+  color: #484848;
 }
 
 .reviews > .container > #wpac-comment {
@@ -874,6 +878,11 @@ main {
     display: block;
     float: none;
     margin-left: 0;
+    text-align: center;
+  }
+
+  .slide-content > .info > p {
+    text-align: left;
   }
 
   .photos-slide {
@@ -973,6 +982,11 @@ main {
 
   .rec-block > div {
     width: 80% !important;
+  }
+
+  .stats > .container > .info > ul > li > span {
+    font-size: 20px;
+    top: 10%;
   }
 }
 

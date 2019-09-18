@@ -12,27 +12,29 @@
 
     <main>
         <% if (products.length > 0) { %>
-            <% products.forEach(product => { %>
-                <div>
-                    <p><%= product %></p>
-                    <form action="/cart-delete-product" method="POST">
-                        <input type="hidden" name="productId" value="<%= product._id %>">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                        <button type="submit">Delete</button>
-                    </form>
-                </div>
-                <form action="/cart-create-order" method="POST">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit">Checkout</button>
-                </form>
-            <% }) %>
+        <h3>Ваша корзина</h3>
+        <% products.forEach(product => { %>
+        <div>
+            <p><%= product %></p>
+            <form action="/cart-delete-product" method="POST">
+                <input type="hidden" name="productId" value="<%= product._id %>">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+        <form action="/cart-create-order" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button type="submit">Checkout</button>
+        </form>
+        <% }) %>
         <% } else { %>
-            <h1>Empty</h1>
+        <h1>Ваша корзина пуста</h1>
         <% } %>
         <% if (orders.length > 0) { %>
-            <% orders.forEach(order => { %>
-                <p><%= order %></p>
-            <% }) %>
+        <h3>Ваши заказы:</h3>
+        <% orders.forEach(order => { %>
+        <p><%= order %></p>
+        <% }) %>
         <% } %>
     </main>
 

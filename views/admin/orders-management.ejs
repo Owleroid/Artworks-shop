@@ -1,26 +1,54 @@
 <%- include('../includes/head.ejs') %>
 <meta name="csrf-token" content="<%= csrfToken %>">
-<link rel="stylesheet" href="/css/admin/product-management.css">
+<link rel="stylesheet" href="/css/admin/orders-management.css">
 </head>
 
 <body>
     <%- include('../includes/navigation-admin.ejs') %>
 
     <main>
-        <% if (orders.length > 0) { %>
-            <% orders.forEach(order => { %>
-                <div>
-                    <p><%= order %></p>
-                    <form action="/admin/delete-order" method="post">
-                        <input type="hidden" name="orderId" value="<%= order._id %>">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                        <button class="btn" type="submit">Delete</i></button>
-                    </form>
-                </div>
-            <% }) %>
-        <% } else { %>
+        <div class="container">
+            <% if (orders.length > 0) { %>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Products</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Settings</th>
+                </tr>
+                <% orders.forEach(order => { %>
+                <tr>
+                    <td><%= order.user.fullName.firstName %> <%= order.user.fullName.lastName %></td>
+                    <td><%= order.user.phone %></td>
+                    <td><%= order.user.email %></td>
+                    <td>
+                        <ul>
+                            <% order.products.forEach(product => { %>
+                            <li><a target="_blank"
+                                    href="/products/<%= product.productId._id %>"><%= product.productId.title %></a>
+                            </li>
+                            <% }) %>
+                        </ul>
+                    </td>
+                    <td><%= order.date %></td>
+                    <td><%= order.orderStatus %></td>
+                    <td>
+                        <form action="/admin/delete-order" method="post">
+                            <input type="hidden" name="orderId" value="<%= order._id %>">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button class="btn" type="submit">Delete</i></button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </table>
+            <% } else { %>
 
-        <% } %>
+            <% } %>
+        </div>
     </main>
 
     <%- include('../includes/end.ejs') %>

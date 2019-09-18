@@ -16,7 +16,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 main {
@@ -34,6 +34,7 @@ main > .container {
   padding: 0 10%;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 
 main > .container > .product {
@@ -42,16 +43,42 @@ main > .container > .product {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   margin-right: 3%;
   margin-left: 3%;
+  overflow: hidden;
+  position: relative;
 }
 
 main > .container > .product > a > img {
-  width: 100%;
+  position: absolute;
+  width: 160%;
   height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vertical-img {
+  width: 100% !important;
+  height: 160% !important;
+}
+
+.no-products {
+  padding: 7vh 0;
 }
 
 @media (max-width: 1200px) {
   main {
     margin-top: 250px;
-    margin-bottom: 250px;
+    margin-bottom: 100px;
+  }
+
+  main > .container > .product {
+    margin-bottom: 30px;
+  }
+
+  .no-products {
+    padding: 0;
   }
 }

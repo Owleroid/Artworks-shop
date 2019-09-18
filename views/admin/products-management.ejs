@@ -35,8 +35,8 @@
                             <%= product.author.fullName.lastname %>
                         </a></td>
                     <% } %>
-                    <td><%= product.parameters.measureSystem %> <%= product.parameters.height %>
-                        <%= product.parameters.width %></td>
+                    <td><%= product.parameters.height %> x <%= product.parameters.width %>
+                        <%= product.parameters.measureSystem %></td>
                     <td><%= product.description %></td>
                     <td><a class="btn" href="/admin/edit-product/<%= product._id %>?edit=true">Редактировать</a>
                         <form action="/admin/delete-product" method="POST">

@@ -1,5 +1,5 @@
 <div class="slide">
-    <div class="photos-slide">
+    <div class="sculptures-slide">
         <div class="nav">
             <div class="nav-header">
                 <div class="logo">
@@ -14,12 +14,12 @@
                 </label>
             </div>
             <div class="nav-links">
-                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-                <a class="<%= path === '/shop' ? 'active' : '' %>" href="/artworks">Artworks</a>
-                <a class="<%= path === '/useful-tips' ? 'active' : '' %>" href="/photos">Photos</a>
-                <a class="<%= path === '/about-me' ? 'active' : '' %>" href="/sculptures">Sculptures</a>
-                <a class="<%= path === '/contacts' ? 'active' : '' %>" href="/master-classes">Master classes</a>
-                <a class="<%= path === '/contacts' ? 'active' : '' %>" href="/contacts">Contacts</a>
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Главная</a>
+                <a class="<%= path === '/artworks' ? 'active' : '' %>" href="/artworks">Картины</a>
+                <a class="<%= path === '/photos' ? 'active' : '' %>" href="/photos">Фотографии</a>
+                <a class="<%= path === '/sculptures' ? 'active' : '' %>" href="/sculptures">Скульптуры</a>
+                <a class="<%= path === '/articles' ? 'active' : '' %>" href="/articles">Масер-классы</a>
+                <a class="<%= path === '/contacts' ? 'active' : '' %>" id="contacts">Контакты</a>
                 <% if (!isAuthenticated) { %>
                 <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">
                     <div></div>
@@ -45,9 +45,9 @@
         </button>
 
         <div class="slide-content">
-            <img src="/images/img/photo-example.jpg">
+            <img src="/images/img/sculpture-example.jpg">
             <div class="info">
-                <h1>Artworks</h1>
+                <h1>Скульптуры</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt sem sit amet mi dapibus,
                     vitae pharetra ipsum
                     scelerisque. Sed suscipit accumsan tincidunt. Vestibulum magna est, vulputate vitae mi tempor,
@@ -62,9 +62,9 @@
         </div>
         <div class="social">
             <ul>
-                <li><a><img src="/images/icons/instagram-i-dark.png"></a></li>
-                <li><a><img src="/images/icons/facebook-i-dark.png"></a></li>
-                <li><a><img src="/images/icons/youtube-i-dark.png"></a></li>
+                <li><a><img src="/images/icons/instagram-i.png"></a></li>
+                <li><a><img src="/images/icons/facebook-i.png"></a></li>
+                <li><a><img src="/images/icons/youtube-i.png"></a></li>
             </ul>
         </div>
     </div>
