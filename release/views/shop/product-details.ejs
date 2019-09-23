@@ -1,0 +1,54 @@
+<%- include('../includes/head.ejs') %>
+<meta name="csrf-token" content="<%= csrfToken %>">
+<link rel="stylesheet" href="/css/shop/product-details.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="conatiner">
+            <div class="product">
+                <div class="product-head">
+                    <h3><%= product.title %></h3>
+                    <img id="product-img" src="\<%= product.imageURL %>">
+                </div>
+                <div class="product-body">
+                    <div class="product-info">
+                        <div class="size">Размер : <%= product.parameters.height %> x
+                            <%= product.parameters.width %> <%= product.parameters.measureSystem %></div>
+                        <div class="price">Цена : <%= product.price %> руб.</div>
+                    </div>
+                    <div class="product-desc"><%= product.description %></div>
+                    <% if (isAuthenticated) { %>
+                    <form action="/cart-add-product" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                        <button type="submit">Купить</button>
+                    </form>
+                    <% } else { %>
+                    <h1>To be able to order an item, you should be registered</h1>
+                    <% } %>
+                </div>
+
+
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+    <div id="Modal" class="modal">
+        <!-- The Close Button -->
+        <span class="close-product">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img src="\<%= product.imageURL %>" class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
+    <script src="/js/product-details.js"></script>
+
+    <%- include('../includes/end.ejs') %>

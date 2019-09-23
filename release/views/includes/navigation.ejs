@@ -1,0 +1,42 @@
+<header>
+    <div class="nav">
+        <div class="nav-header">
+            <div class="logo">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/"><span>Art108</span></a>
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Главная</a>
+            <a class="<%= path === '/artworks' ? 'active' : '' %>" href="/artworks">Картины</a>
+            <a class="<%= path === '/photos' ? 'active' : '' %>" href="/photos">Фотографии</a>
+            <a class="<%= path === '/sculptures' ? 'active' : '' %>" href="/sculptures">Скульптуры</a>
+            <a class="<%= path === '/articles' ? 'active' : '' %>" href="/articles">Масер-классы</a>
+            <a class="<%= path === '/contacts' ? 'active' : '' %>" id="contacts">Контакты</a>
+            <% if (!isAuthenticated) { %>
+            <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">
+                <div> </div>
+            </a>
+            <% } else { %>
+            <a class="cart" href="/cart">
+                <div class="cart-icon"></div>
+            </a>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">
+                    <div></div>
+                </button>
+            </form>
+            <% if (isAdmin) { %>
+            <a href="/admin/products-management" class="pm-link"><i class="fas fa-sliders-h"></i></a>
+            <% } %>
+            <% } %>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,32 @@
+<header>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                ПАНЕЛЬ УПРАВЛЕНИЯ
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <a class="<%= path === '/admin/products-management' ? 'active' : '' %>"
+                href="/admin/products-management">Товары</a>
+            <a class="<%= path === '/admin/orders-management' ? 'active' : '' %>"
+                href="/admin/orders-management">Заказы</a>
+            <a class="<%= path === '/admin/articles-management' ? 'active' : '' %>"
+                href="/admin/articles-management">Статьи</a>
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Перейти на сайт</a>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">
+                    <div></div>
+                </button>
+            </form>
+        </div>
+    </div>
+</header>
