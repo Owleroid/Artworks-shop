@@ -7,11 +7,12 @@
     <%- include('../includes/navigation-admin.ejs') %>
 
     <main>
+        <div class="container">
         <% if (path === '/admin/add-product') { %>
+            <h2>Добавление товара</h2>
         <form action="/admin/add-product" method="POST" enctype="multipart/form-data">
-            <legend>New product</legend>
-            <div>
-                <h2>Выберите категорию:</h2>
+            <div class="category">
+                <label>Выберите категорию:</label>
                 <select name="category" id="category">
                     <option value="artworks">Artworks</option>
                     <option value="photos">Photos</option>
@@ -23,11 +24,11 @@
             <div class="measureSystem">
                 <label>Укажите размер:</label>
                 <select name="measureSystem" id="measureSystem">
-                    <option value="cm.">Сentimeters</option>
-                    <option value="m.">Meters</option>
+                    <option value="cm.">Сантиметры</option>
+                    <option value="m.">Метры</option>
                 </select>
-                <input type="number" name="width" id="width" placeholder="Width">
-                <input type="number" name="height" id="height" placeholder="Height">
+                <input type="number" name="height" id="height" placeholder="Высота">
+                <input type="number" name="width" id="width" placeholder="Ширина">
             </div>
             <div class="author">
                 <label>Укажите автора:</label>
@@ -101,6 +102,7 @@
             <button class="btn" type="submit">Сохранить</button>
         </form>
         <% } %>
+    </div>
     </main>
 
     <%- include('../includes/end.ejs') %>

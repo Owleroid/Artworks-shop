@@ -1,72 +1,99 @@
 <div class="slide">
-    <div class="photos-slide">
-        <div class="nav">
-            <div class="nav-header">
-                <div class="logo">
-                    <a class="<%= path === '/' ? 'active' : '' %>" href="/"><span>Art108</span></a>
-                </div>
-            </div>
-            <div class="nav-btn">
-                <label for="nav-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </div>
-            <div class="nav-links">
-                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Главная</a>
-                <a class="<%= path === '/artworks' ? 'active' : '' %>" href="/artworks">Картины</a>
-                <a class="<%= path === '/photos' ? 'active' : '' %>" href="/photos">Фотографии</a>
-                <a class="<%= path === '/sculptures' ? 'active' : '' %>" href="/sculptures">Скульптуры</a>
-                <a class="<%= path === '/articles' ? 'active' : '' %>" href="/articles">Масер-классы</a>
-                <a class="<%= path === '/contacts' ? 'active' : '' %>" id="contacts">Контакты</a>
-                <% if (!isAuthenticated) { %>
-                <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">
-                    <div></div>
-                </a>
-                <% } else { %>
-                <a class="cart" href="/cart">
-                    <div></div>
-                </a>
-                <form action="/logout" method="post">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit">
-                        <div></div>
-                    </button>
-                </form>
-                <% } %>
-            </div>
+  <div class="photos-slide">
+    <div class="nav">
+      <div class="nav-header">
+        <div class="logo">
+          <a class="<%= path === '/' ? 'active' : '' %>" href="/"
+            ><span>Art108</span></a
+          >
         </div>
-
-        <button class="previous">
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <div class="nav-links">
+        <a class="<%= path === '/' ? 'active' : '' %>" href="/">Главная</a>
+        <a class="<%= path === '/artworks' ? 'active' : '' %>" href="/artworks"
+          >Картины</a
+        >
+        <a class="<%= path === '/photos' ? 'active' : '' %>" href="/photos"
+          >Фотографии</a
+        >
+        <a
+          class="<%= path === '/sculptures' ? 'active' : '' %>"
+          href="/sculptures"
+          >Скульптуры</a
+        >
+        <a class="<%= path === '/articles' ? 'active' : '' %>" href="/articles"
+          >Масер-классы</a
+        >
+        <a class="<%= path === '/contacts' ? 'active' : '' %>" id="contacts"
+          >Контакты</a
+        >
+        <% if (!isAuthenticated) { %>
+        <a class="<%= path === '/log-in' ? 'active' : '' %>" href="/log-in">
+          <div></div>
+        </a>
+        <% } else { %>
+        <a class="cart" href="/cart">
+          <div></div>
+        </a>
+        <form action="/logout" method="post">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          <button type="submit">
             <div></div>
-        </button>
-        <button class="next">
-            <div></div>
-        </button>
-
-        <div class="slide-content">
-            <img src="/images/img/photo-example.jpg">
-            <div class="info">
-                <h1>Фотографии</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt sem sit amet mi dapibus,
-                    vitae pharetra ipsum
-                    scelerisque. Sed suscipit accumsan tincidunt. Vestibulum magna est, vulputate vitae mi tempor,
-                    finibus elementum nisl.
-                    Nulla ipsum massa, dapibus in ante ac, convallis porttitor turpis. Etiam vel nisl a mauris tempus
-                    vestibulum in vitae
-                    leo. Suspendisse auctor rutrum risus sed vehicula. Curabitur pellentesque nibh nec pellentesque
-                    venenatis. Donec
-                    placerat tempus tortor, ac suscipit eros mollis a.</p>
-                <button>more</button>
-            </div>
-        </div>
-        <div class="social">
-            <ul>
-                <li><a><img src="/images/icons/instagram-i-dark.png"></a></li>
-                <li><a><img src="/images/icons/facebook-i-dark.png"></a></li>
-                <li><a><img src="/images/icons/youtube-i-dark.png"></a></li>
-            </ul>
-        </div>
+          </button>
+        </form>
+        <% } %>
+      </div>
     </div>
+
+    <button class="previous">
+      <div></div>
+    </button>
+    <button class="next">
+      <div></div>
+    </button>
+
+    <div class="slide-content">
+      <img src="/images/img/photo-example.jpg" />
+      <div class="info">
+        <h1>Фотографии</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          tincidunt sem sit amet mi dapibus, vitae pharetra ipsum scelerisque.
+          Sed suscipit accumsan tincidunt. Vestibulum magna est, vulputate vitae
+          mi tempor, finibus elementum nisl. Nulla ipsum massa, dapibus in ante
+          ac, convallis porttitor turpis. Etiam vel nisl a mauris tempus
+          vestibulum in vitae leo. Suspendisse auctor rutrum risus sed vehicula.
+          Curabitur pellentesque nibh nec pellentesque venenatis. Donec placerat
+          tempus tortor, ac suscipit eros mollis a.
+        </p>
+        <button>подробнее</button>
+      </div>
+    </div>
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/art_108_/" target="_blank">
+            <img src="/images/icons/instagram-i-dark.png" />
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="/images/icons/facebook-i-dark.png" />
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="/images/icons/youtube-i-dark.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

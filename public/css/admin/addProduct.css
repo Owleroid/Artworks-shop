@@ -39,7 +39,12 @@ main > .container > form > .category {
   margin-bottom: 10px;
 }
 
-main > .container > form > .category > h2 {
+main > .container > form > .category > select{
+  height: 30px;
+}
+
+main > .container > h2 {
+  text-align: center;
   padding: 15px;
 }
 

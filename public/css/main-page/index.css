@@ -83,8 +83,8 @@ main {
 
 .slide-content > .info > button {
   margin-top: 20px;
-  height: 40px;
-  width: 120px;
+  height: 50px;
+  width: 140px;
   font-size: 20px;
   background: #fff;
   color: #484848;
@@ -108,6 +108,8 @@ main {
 
 .slide .social > ul > li > a {
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .slide .social > ul > li > a:hover {
@@ -121,6 +123,8 @@ main {
 
 .artworks-slide > .nav > .nav-links > a {
   color: #fff;
+  border: none;
+  outline: none;
 }
 
 .artworks-slide {
@@ -235,6 +239,11 @@ main {
   color: #484848;
 }
 
+.photos-slide > .nav > .nav-links > a {
+  border: none;
+  outline: none;
+}
+
 .photos-slide > .nav > .nav-links > a > div {
   background: url(/images/icons/login-dark.png);
   background-size: contain;
@@ -295,6 +304,8 @@ main {
 
 .sculptures-slide > .nav > .nav-links > a {
   color: #fff;
+  border: none;
+  outline: none;
 }
 
 .sculptures-slide {
@@ -698,21 +709,23 @@ main {
   padding-bottom: 5%;
 }
 
-.contacts > .container > .workers {
+.workers {
   display: inline-flex;
   padding-bottom: 40px;
 }
 
-.contacts > .container > .workers > .worker {
+.workers > .worker {
   display: inline-flex;
   padding: 20px 50px;
 }
 
-.contacts > .container > .workers > .worker > .contact-info {
+.workers > .worker > .contact-info {
   display: block;
+  text-align: left;
+  padding-left: 20px;
 }
 
-.contacts > .container > .workers > .worker > .contact-info > h5 {
+.workers > .worker > .contact-info > h5 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
@@ -721,7 +734,7 @@ main {
   font-size: 24px;
 }
 
-.contacts > .container > .workers > .worker > .contact-info > h6 {
+.workers > .worker > .contact-info > h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
@@ -732,13 +745,18 @@ main {
   line-height: 25px;
 }
 
-.contacts > .container > .workers > .worker > .contact-info > h6 > img {
+.workers > .worker > .contact-info > h6 > img {
   width: 25px;
   height: 25px;
   vertical-align: middle;
 }
 
-.contacts > .container > .workers > .worker > img {
+.workers > .worker > .contact-info > h6 > a {
+  color: #484848;
+  text-decoration: none;
+}
+
+.workers > .worker > img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -895,6 +913,11 @@ main {
   .sculptures-slide {
     background-position: bottom center;
     background-size: 100% 70%;
+  }
+
+  .sculptures-slide > .previous > div {
+    background: url("/images/icons/bright-arrow.png");
+    background-size: contain;
   }
 
   .recomendations {

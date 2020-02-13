@@ -40,12 +40,12 @@ footer > .logo > a {
   position: relative;
 }
 
-footer > .contact-data {
+.contact-data {
   margin-top: 45px;
   padding: 0px 10px;
 }
 
-footer > .contact-data > ul > li {
+.contact-data > ul > li {
   color: #fff;
   /*font-family: "Libre Franklin", sans-serif;*/
   list-style-type: none;
@@ -53,7 +53,7 @@ footer > .contact-data > ul > li {
   line-height: 18px;
 }
 
-footer > .contact-data > ul > li > img {
+.contact-data > ul > li > img {
   height: 25px;
   width: 25px;
   vertical-align: middle;
@@ -65,26 +65,26 @@ footer > .logo > a > span {
   color: #fff;
 }
 
-footer > .social {
+.social {
   margin-top: 80px;
   padding-left: 50px;
 }
 
-footer > .social > ul > li {
+.social > ul > li {
   list-style-type: none;
   display: inline-flex;
   padding: 5px;
 }
 
-footer > .social > ul > li > a {
+.social > ul > li > a {
   cursor: pointer;
 }
 
-footer > .social > ul > li > a:hover {
+.social > ul > li > a:hover {
   opacity: 0.8;
 }
 
-footer > .social > ul > li > a > img {
+.social > ul > li > a > img {
   width: 25px;
   height: 25px;
 }
@@ -94,7 +94,7 @@ footer > .social > ul > li > a > img {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 3001; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 20px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
